@@ -2,6 +2,7 @@ library stripe;
 
 import 'package:meta/meta.dart';
 import 'package:stripe/src/resources/ephemeral_key.dart';
+import 'package:stripe/src/resources/payment_method.dart';
 import 'package:stripe/src/resources/setup_intent.dart';
 
 import 'src/client.dart';
@@ -48,6 +49,9 @@ class Stripe {
   /// https://stripe.com/docs/api/payment_intents
   final PaymentIntentResource paymentIntent;
 
+  /// https://stripe.com/docs/api/payment_methods
+  final PaymentMethodResource paymentMethod;
+
   /// https://stripe.com/docs/api/prices
   final PriceResource price;
 
@@ -80,6 +84,7 @@ class Stripe {
         customer = CustomerResource(client),
         refund = RefundResource(client),
         paymentIntent = PaymentIntentResource(client),
+        paymentMethod = PaymentMethodResource(client),
         price = PriceResource(client),
         product = ProductResource(client),
         subscription = SubscriptionResource(client),

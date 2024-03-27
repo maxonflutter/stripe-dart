@@ -19,6 +19,7 @@ part 'src/messages/product.dart';
 part 'src/messages/refund.dart';
 part 'src/messages/setup_intent.dart';
 part 'src/messages/shipping_specification.dart';
+part 'src/messages/requests/attach_payment_method.dart';
 part 'src/messages/requests/create_checkout_session.dart';
 part 'src/messages/requests/create_customer.dart';
 part 'src/messages/requests/create_payment_intent.dart';
