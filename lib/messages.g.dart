@@ -744,6 +744,20 @@ Map<String, dynamic> _$ShippingSpecificationToJson(
   return val;
 }
 
+AttachPaymentMethodRequest _$AttachPaymentMethodRequestFromJson(
+        Map<String, dynamic> json) =>
+    AttachPaymentMethodRequest(
+      customer: json['customer'] as String,
+      id: json['id'] as String,
+    );
+
+Map<String, dynamic> _$AttachPaymentMethodRequestToJson(
+        AttachPaymentMethodRequest instance) =>
+    <String, dynamic>{
+      'customer': instance.customer,
+      'id': instance.id,
+    };
+
 CreateCheckoutSessionRequest _$CreateCheckoutSessionRequestFromJson(
         Map<String, dynamic> json) =>
     CreateCheckoutSessionRequest(
