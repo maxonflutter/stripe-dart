@@ -34,7 +34,7 @@ class CustomerResource extends Resource<Customer> {
     return Customer.fromJson(response);
   }
 
-  Future<DataList<PaymentMethod>> paymentMethods(String customerId) async {
+  Future<DataList<PaymentMethod>> listPaymentMethods(String customerId) async {
     final response = await get(
       'customers/$customerId/payment_methods',
     );
@@ -43,5 +43,13 @@ class CustomerResource extends Resource<Customer> {
       response,
       (value) => PaymentMethod.fromJson(value as Map<String, dynamic>),
     );
+  }
+
+  Future<PaymentMethod> retrievePaymentMethod(
+    String customerId,
+    String paymentMethodId,
+  ) async {
+    final response = await get('customers/$customerId/payment_methods');
+    return PaymentMethod.fromJson(response);
   }
 }
