@@ -30,19 +30,13 @@ class SetupIntentResource extends Resource<SetupIntent> {
     return SetupIntent.fromJson(map);
   }
 
-  /// Returns true if successful.
-  Future<bool> confirm(ConfirmSetupIntentRequest request) async {
+  Future<SetupIntent> confirm(ConfirmSetupIntentRequest request) async {
     final setupIntentId = request.id;
-    try {
-      await post(
-        'setup_intents/$setupIntentId/confirm',
-        data: request.toJson(),
-      );
-    } catch (e) {
-      log.warning(e);
-      return false;
-    }
-    return true;
+    final response = await post(
+      'setup_intents/$setupIntentId/confirm',
+      data: request.toJson(),
+    );
+    return SetupIntent.fromJson(response);
   }
 
   /// Returns true if successful.
