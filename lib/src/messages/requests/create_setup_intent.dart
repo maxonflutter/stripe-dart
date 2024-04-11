@@ -8,6 +8,7 @@ class CreateSetupIntentRequest {
   final String? description;
   final Map<String, String>? metadata;
   final String? paymentMethod;
+  final bool useStripeSdk;
 
   CreateSetupIntentRequest({
     this.clientSecret,
@@ -16,6 +17,7 @@ class CreateSetupIntentRequest {
     this.description,
     this.metadata,
     this.paymentMethod,
+    this.useStripeSdk = false,
   });
 
   factory CreateSetupIntentRequest.fromJson(Map<String, dynamic> json) =>
